@@ -36,13 +36,13 @@ dikembangkan ("dipecahkan sendiri")
 ## Konfigurasi Database
 - Buat database baru dengan nama "kontak"
 
-```python
+``` 
 CREATE DATABASE kontak;
 
 ```
 - Buat Tabel baru dengan nama "telepon" dengan field id(int 11 AUTO_INCREMENT), nama (varchar 30), nomor (varchar 11).
 
-```python
+``` 
 USE kontak;
 CREATE TABLE IF NOT EXISTS `telepon` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `telepon` (
 
 - Masukan beberapa data contoh :
 
-```python
+``` 
 USE kontak;
 INSERT INTO `telepon` (`id`, `nama`, `nomor`) VALUES
 (1, 'Orion', '08576666762'),
@@ -66,7 +66,7 @@ INSERT INTO `telepon` (`id`, `nama`, `nomor`) VALUES
 
 - Buka database.php pada rest_ci/application/config ubah menjadi
 
-```python
+``` 
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
@@ -106,7 +106,7 @@ Metode GET menyediakan akses baca pada sumber daya yang disediakan oleh REST API
 
 - Buat file php baru di di rest_ci/application/controller dengan nama kontak.php.
 
-```python
+``` 
 <?php
 
 defined('BASEPATH') OR exit('No direct script access allowed');
@@ -143,7 +143,7 @@ class Kontak extends REST_Controller {
 ## POST
  Metode POST digunakan untuk mengirimkan data baru dari client ke server REST API. Sebagai contohnya digunakan untuk menambahkan kontak baru yang terdiri dari id, nama, dan nomor.
 
-```python
+``` 
 //Mengirim atau menambah data kontak baru
     function index_post() {
         $data = array(
@@ -169,7 +169,7 @@ class Kontak extends REST_Controller {
 ## PUT 
 Metode PUT digunakan untuk memperbarui data yang telah ada di server REST API. Sebagai contohnya digunakan untuk memperbarui data dengan id 88 pada tabel telepon database kontak.
 
-```python
+``` 
     //Memperbarui data kontak yang telah ada
     function index_put() {
         $id = $this->put('id');
@@ -196,7 +196,7 @@ Metode PUT digunakan untuk memperbarui data yang telah ada di server REST API. S
 ## DELETE
 Metode DELETE digunakan untuk menghapus data yang telah ada di server REST API. Sebagai contohnya digunakan untuk menghapus data dengan id 88 pada tabel telepon database kontak.
 
-```python
+``` 
   //Menghapus salah satu data kontak
     function index_delete() {
         $id = $this->delete('id');
@@ -215,7 +215,7 @@ Metode DELETE digunakan untuk menghapus data yang telah ada di server REST API. 
 
 ### Keseluruhan
 
-```python
+``` 
 <?php
 
 defined('BASEPATH') OR exit('No direct script access allowed');
